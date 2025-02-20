@@ -3,10 +3,10 @@ kind: Deployment # Kubernetes resource kind we are creating
 metadata:
   name: broadgame-deployment
 spec:
+  replicas: 2 # Number of replicas that will be created for this deployment
   selector:
     matchLabels:
       app: broadgame
-  replicas: 2 # Number of replicas that will be created for this deployment
   template:
     metadata:
       labels:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: broadgame
-          image: mykuberegistry1.azurecr.io/mykuberegistry1/merranbo # Image that will be used to containers in the cluster
+          image: mykuberegistry1.azurecr.io/mykuberegistry1/merranbo:latest # Image that will be used to containers in the cluster
           imagePullPolicy: Always
           ports:
             - containerPort: 8080 # The port that the container is running on in the cluster
