@@ -13,8 +13,8 @@ spec:
         app: boardgame
     spec:
       containers:
-        - name: mykuberegistry1/merranbo
-          image: mykuberegistry1.azurecr.io/mykuberegistry1/merranbo:latest # Image that will be used to containers in the cluster
+        - name: boardgame
+          image: mykuberegistry1.azurecr.io/mykuberegistry1/merranbo # Image that will be used to containers in the cluster
           imagePullPolicy: Always
           ports:
             - containerPort: 8080 # The port that the container is running on in the cluster
