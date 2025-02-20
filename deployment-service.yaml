@@ -13,7 +13,7 @@ spec:
         app: boardgame
     spec:
       containers:
-        - name: boardgame
+        - name: mykuberegistry1/merranbo
           image: mykuberegistry1.azurecr.io/mykuberegistry1/merranbo:latest # Image that will be used to containers in the cluster
           imagePullPolicy: Always
           ports:
@@ -25,7 +25,7 @@ spec:
 apiVersion: v1 # Kubernetes API version
 kind: Service # Kubernetes resource kind we are creating
 metadata: # Metadata of the resource kind we are creating
-  name: boardgame-ssvc
+  name: boardgame-svc
 spec:
   selector:
     app: boardgame
